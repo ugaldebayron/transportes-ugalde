@@ -1,9 +1,32 @@
+
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     margin: 0;
     padding: 0;
     text-align: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("imagenes/logo.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 650px;
+    opacity: 0.08;
+    z-index: -1;
+    pointer-events: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 header {
@@ -14,6 +37,7 @@ header {
 
 section {
     padding: 30px;
+    animation: aparecer 1.5s;
 }
 
 h2 {
@@ -29,25 +53,62 @@ li {
     margin: 10px 0;
 }
 
-.colegios {
-    background-color: rgb(220, 235, 222);
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-}
 img {
     margin: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+
 .carousel img {
     width: 500px;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: opacity 0.8s ease-in-out;
 }
-section {
-    animation: aparecer 1.5s;
+
+.colegios {
+    background-color: rgb(220, 235, 222);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+nav {
+    background-color: #33793f;
+    padding: 15px;
+}
+
+nav a {
+    color: rgb(171, 199, 182);
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #25D366;
+}
+
+button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 18px 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+footer {
+    background-color: #93ad95;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
 }
 
 @keyframes aparecer {
@@ -61,51 +122,8 @@ section {
         transform: translateY(0);
     }
 }
-nav {
-    background-color: #33793f;
-    padding: 15px;
-}
 
-nav a {
-    color: rgb(171, 199, 182);
-    text-decoration: none;
-    margin: 20px;
-    font-weight: bold;
-}
-html {
-    scroll-behavior: smooth;
-}
-nav a:hover {
-    color: #25D366;
-}
-footer {
-    background-color: #93ad95;
-    color: rgb(255, 255, 255);
-    padding: 20px;
-    margin-top: 30px;
-}
-body {
-    position: relative;
-    overflow-x: hidden;
-}
-
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  background-image: url("imagenes/logo.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-   background-size: 650px;
-    opacity: 0.08;
-    z-index: -1;
-    pointer-events: none;
-}
 @media (max-width: 768px) {
-
     header {
         padding: 20px;
         font-size: 18px;
@@ -134,98 +152,21 @@ body::before {
     nav a {
         margin: 10px 0;
         font-size: 18px;
-    }
-}@media (max-width: 768px) {
-
-    header {
-        padding: 20px;
-        font-size: 18px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    .carousel img {
-        width: 90%;
-        height: auto;
-    }
-
-    img {
-        width: 90%;
-        height: auto;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-}@media (max-width: 768px) {
-
-    header {
-        padding: 20px;
-        font-size: 18px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    .carousel img {
-        width: 90%;
-        height: auto;
-    }
-
-    img {
-        width: 90%;
-        height: auto;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }
-    nav a {
-        margin: 10px 0;
-        font-size: 18px;
-    }
-    @media (max-width: 768px) {
+li a {
+    display: inline-block;
+    background-color: #1e3a8a;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    margin: 10px;
+}
 
-    header {
-        padding: 20px;
-        font-size: 18px;
-    }
-
-    section {
-        padding: 15px;
-    }
-
-    .carousel img {
-        width: 90%;
-        height: auto;
-    }
-
-    img {
-        width: 90%;
-        height: auto;
-    }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav a {
-        margin: 10px 0;
-        font-size: 18px;
-    }
+li a:hover {
+    background-color: #3b82f6;
+    transform: scale(1.08);
 }
